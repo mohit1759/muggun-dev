@@ -1,0 +1,267 @@
+:root {
+    --primary: #2563EB;
+    --secondary: #0F172A;
+    --accent: #F59E0B;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8;
+    border-color: #1D4ED8;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.btn-new{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background:  var(--primary);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-new:hover::before {
+    left: 0;
+}
+
+.btn-new:hover {
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+/* Footer Links */
+
+.footer-link {
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #2563EB;
+}
+
+/* Custom Card & Chart Styles for Index Page Section */
+.feature-dark-card {
+    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.92));
+    border-radius: 20px;
+    color: #ffffff;
+    min-height: 480px;
+}
+
+.feature-white-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    min-height: 480px;
+}
+
+/* Chart Bars Custom Style */
+.chart-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 180px;
+    padding-top: 20px;
+}
+
+.chart-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    margin: 0 6px;
+}
+
+.chart-bar {
+    width: 100%;
+    background-color: #f1f5f9;
+    border-radius: 10px 10px 4px 4px;
+    height: 0px; /* Initial height 0 taaki upar ki taraf grow ho sake */
+    transition: height 1.2s cubic-bezier(0.1, 1, 0.1, 1); /* Smooth upward growth */
+}
+
+.chart-bar.active {
+    background-color: #f97316; /* Orange Active Bar matching image */
+}
+
+.read-more-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.read-more-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f97316;
+    transition: width 0.3s ease;
+}
+
+.read-more-link:hover::after {
+    width: 60%;
+}
+
+/* Horizontal Scroll Container Fix */
+#pillarsSlider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+}
+
+#pillarsSlider.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+/* Scrollbar styling */
+#pillarsSlider::-webkit-scrollbar {
+    height: 6px;
+}
+#pillarsSlider::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+#pillarsSlider::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Incubation Banner Box */
+.incubation-banner {
+    background-color: #f7f8fd !important; /* Soft faint lavender/white tint */
+    border: 1px solid #ebedfa !important;
+    min-height: 320px;
+}
+
+/* Tagline & Highlight colors */
+.incubation-tagline {
+    color: #5551f3 !important;
+    font-size: 13px !important;
+    letter-spacing: 1.5px !important;
+}
+
+.incubation-highlight {
+    color: #5551f3 !important;
+}
+
+/* Background Watermark Typography Fix */
+.watermark-text-large {
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 85px;
+    font-weight: 900;
+    color: rgba(85, 81, 243, 0.08); /* Faint Purple Watermark */
+    letter-spacing: 2px;
+    line-height: 0.82;
+    pointer-events: none;
+    user-select: none;
+    text-align: right;
+    z-index: 1;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Screen Size responsiveness for watermark */
+@media (max-width: 991px) {
+    .watermark-text-large {
+        font-size: 55px;
+        opacity: 0.05;
+    }
+}
+
+.btn-purple-cta {
+    background-color: #5551f3 !important;
+    color: #ffffff !important;
+    border: none !important;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+}
+
+.btn-purple-cta:hover {
+    background-color: #423ed8 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(85, 81, 243, 0.3) !important;
+}
+
+/* Footer Social Icons */
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.social-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* About us Custom Horizontal Slider Styling */
+.custom-slider-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.custom-slider-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.custom-slider-container.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+
